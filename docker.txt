@@ -1,0 +1,26 @@
+docker images
+docker pull:latest
+docker ps -a
+docker rm
+docker run -d -p 8080:8080 --name tomcat image ID
+service docker start
+service docker status
+docker exec -it tomcat-container /bin/bash
+cp -R * ../webapps
+
+useradd dockeradmin
+cat /etc/group
+
+usermod -aG docker dockeradmin
+id dockeradmin
+
+vi/etc/ssh/sshd_config
+
+FROM Tomcat:latest
+COPY ./webapp.war /usr/local/tomcat/webapps
+RUN cp -r /usr/local/tomcat/webapps.dist/* /usr/local/tomcat/webapps
+
+ssh-copy-id ec2-user@34.204.95.31
+ssh-copy-id ec2-user@localhost
+ansible-playbook -i hosts firstplaybook.yml
+
